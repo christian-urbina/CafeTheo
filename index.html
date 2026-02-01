@@ -6,28 +6,158 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <link rel="stylesheet" href="cafe.css" />
-    <script src="cafe.js"></script>
-</head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
+    <style>
+        
+        body {
+            padding-top: 70px; 
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f3e6da; 
+            color: #3b2f2f;
+        }
+
+        .navbar-custom {
+            transition: background-color 0.4s ease;
+        }
+        .navbar-dark-bg {
+            background-color: #1a1a1a !important; 
+        }
+        .navbar a.nav-link,
+        .navbar .navbar-brand {
+            color: #fff !important;
+        }
+        .navbar .btn-success {
+            background-color: #6b4f4f;
+            border-color: #6b4f4f;
+        }
+        .navbar .btn-success:hover {
+            background-color: #563c3c;
+            border-color: #563c3c;
+        }
+
+     
+        #cafeCarousel {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+        }
+        #cafeCarousel .carousel-item img {
+            height: 55vh;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+        .carousel-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.45);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 1rem;
+            pointer-events: none;
+        }
+        .carousel-overlay h1 {
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .carousel-overlay p {
+            color: #f1f1f1;
+            font-size: 1rem;
+            max-width: 90%;
+        }
+        @media (min-width: 600px) {
+            #cafeCarousel .carousel-item img { height: 65vh; }
+            .carousel-overlay h1 { font-size: 2.4rem; }
+            .carousel-overlay p { font-size: 1.2rem; max-width: 70%; }
+        }
+        @media (min-width: 992px) {
+            #cafeCarousel .carousel-item img { height: 75vh; }
+            .carousel-overlay h1 { font-size: 3rem; }
+            .carousel-overlay p { font-size: 1.4rem; max-width: 60%; }
+        }
+
+      
+        .producto {
+            background-color: #fff3e6; 
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            height: 100%;
+        }
+        .producto img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .producto h3 { margin-top: 0.8rem; font-size: 1.1rem; }
+        .producto p { font-size: 0.9rem; color: #6b4f4f; }
+
+
+        .footer {
+            background-color: #6b4f4f;
+            color: #fff;
+            padding: 1rem;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+
+        .social-header a {
+            color: #fff;
+            font-size: 1.4rem;
+            transition: transform 0.2s ease, color 0.2s ease;
+            margin-left: 0.5rem;
+        }
+        .social-header a:hover { transform: scale(1.1); }
+        .social-header a .bi-facebook { color: #1877f2; }
+        .social-header a .bi-whatsapp { color: #25d366; }
+    </style>
+</head>
 <body>
 
-<header>
+<nav id="navbar" class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top navbar-dark-bg shadow">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#home">Café Theo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuCafe">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+        <div class="collapse navbar-collapse" id="menuCafe">
+            <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#home">Inicio</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contacto">Contáctenos</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="https://wa.me/50499999999?text=Hola%20quiero%20pedir%20un%20café"
+                 target="_blank"class="btn btn-success ms-md-3 mt-2 mt-md-0"><i class="bi bi-whatsapp me-1"></i> Hacer una Orden
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<header id="home">
     <div id="cafeCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-
-       
         <div class="carousel-overlay d-flex flex-column justify-content-center align-items-center">
-            <h1 class="fw-bold">Café Theo</h1>
+            <h1 class="fw-bold">Calidad Que Nos Une</h1>
             <p>50 años de tradición en el corazón de Tegucigalpa</p>
         </div>
-
-        <div class="social-header d-flex justify-content-end align-items-center">
-</div>
 
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#cafeCarousel" data-bs-slide-to="0" class="active"></button>
@@ -35,186 +165,74 @@
             <button type="button" data-bs-target="#cafeCarousel" data-bs-slide-to="2"></button>
         </div>
 
-        <div class="social-header d-flex justify-content-end align-items-center">
-        <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
-        <i class="bi bi-facebook"></i>
-        </a>
-         <a href="https://wa.me/50499999999" target="_blank" aria-label="WhatsApp">
-        <i class="bi bi-whatsapp"></i>
-        </a>
-        </div>
-
-
         <div class="carousel-inner">
-
             <div class="carousel-item active">
-                <img src="1.jpg" class="d-block w-100" alt="Café espresso recién preparado">
+                <img src="Imgcafepag/1.jpg" class="d-block w-100" alt="Café espresso">
             </div>
-
             <div class="carousel-item">
-                <img src="2.jpg" class="d-block w-100" alt="Café artesanal hondureño">
+                <img src="Imgcafepag/2.jpg" class="d-block w-100" alt="Café artesanal">
             </div>
-
             <div class="carousel-item">
-                <img src="6.jpg" class="d-block w-100" alt="Ambiente tradicional del café">
+                <img src="Imgcafepag/6.jpg" class="d-block w-100" alt="Ambiente tradicional">
             </div>
-
         </div>
+
     </div>
 </header>
 
-<main class="container my-5">
+
+<main class="contenedor15" id="productos">
     <h2 class="text-center mb-4">Nuestros Productos Insignia</h2>
-
-   <section class="row g-4">
-
-    
-    <div class="col-12 col-sm-6 col-lg-4">
-        <div class="producto">
-            <img src="Imgcafepag/1.jpg" loading="lazy" alt="Espresso Tradicional">
-            <h3>Espresso Tradicional</h3>
-            <p>Intenso y aromático</p>
-        </div>
-    </div>
-
-    <div class="col-12 col-sm-6 col-lg-4">
-        <div class="producto">
-            <img src="Imgcafepag/2.jpg" loading="lazy" alt="Café Americano">
-            <h3>Americano</h3>
-            <p>Clásico y suave</p>
-        </div>
-    </div>
-
-    
-    <div class="col-12 col-sm-6 col-lg-4">
-        <div class="producto">
-            <img src="Imgcafepag/4.png" loading="lazy" alt="Capuccino">
-            <h3>Capuccino</h3>
-            <p>Espuma perfecta</p>
-        </div>
-    </div>
-
-    
-    <div class="col-12 col-sm-6 col-lg-4">
-        <div class="producto">
-            <img src="Imgcafepag/3.jpg" loading="lazy" alt="Latte">
-            <h3>Latte</h3>
-            <p>Cremoso y balanceado</p>
-        </div>
-    </div>
-
-    
-    <div class="col-12 col-sm-6 col-lg-4">
-        <div class="producto">
-            <img src="Imgcafepag/5.jpg" loading="lazy" alt="Mocaccino">
-            <h3>Mocaccino</h3>
-            <p>Café con chocolate</p>
-        </div>
-    </div>
-
-    
-    <div class="col-12 col-sm-6 col-lg-4">
-        <div class="producto">
-            <img src="Imgcafepag/6.jpg" loading="lazy" alt="Café Negro">
-            <h3>Café Negro</h3>
-            <p>100% hondureño</p>
-        </div>
-    </div>
-
-    
-    <div class="col-12 col-sm-6 col-lg-4">
-        <div class="producto">
-            <img src="Imgcafepag/8.jpg" loading="lazy" alt="Café Frío">
-            <h3>Café Frío</h3>
-            <p>Refrescante y natural</p>
-        </div>
-    </div>
-
-    
-    <div class="col-12 col-sm-6 col-lg-4">
-        <div class="producto">
-            <img src="Imgcafepag/9.jpeg" loading="lazy" alt="Chocolate Caliente">
-            <h3>Chocolate Caliente</h3>
-            <p>Espeso y reconfortante</p>
-        </div>
-    </div>
-
-   
-    <div class="col-12 col-sm-6 col-lg-4">
-        <div class="producto">
-            <img src="Imgcafepag/10.jpg" loading="lazy" alt="Té Natural">
-            <h3>Té Natural</h3>
-            <p>Hierbas seleccionadas</p>
-        </div>
-    </div>
-
-    
-    <div class="col-12 col-sm-6 col-lg-4">
-        <div class="producto">
-            <img src="Imgcafepag/11.jpg" loading="lazy" alt="Pan de Banano">
-            <h3>Pan de Banano</h3>
-            <p>Receta artesanal</p>
-        </div>
-    </div>
-
-    
-    <div class="col-12 col-sm-6 col-lg-4">
-        <div class="producto">
-            <img src="Imgcafepag/12.jpg" loading="lazy" alt="Rosquilla Casera">
-            <h3>Rosquilla Casera</h3>
-            <p>Tradición hondureña</p>
-        </div>
-    </div>
-
-   
-    <div class="col-12 col-sm-6 col-lg-4">
-        <div class="producto">
-            <img src="Imgcafepag/13.jpg" loading="lazy" alt="Empanada Dulce">
-            <h3>Empanada Dulce</h3>
-            <p>Horneada diariamente</p>
-        </div>
-    </div>
-
- 
-    <div class="col-12 col-sm-6 col-lg-4">
-        <div class="producto">
-            <img src="Imgcafepag/14.jpg" loading="lazy" alt="Pastel Tres Leches">
-            <h3>Pastel Tres Leches</h3>
-            <p>Favorito del público</p>
-        </div>
-    </div>
-
-    
-    <div class="col-12 col-sm-6 col-lg-4">
-        <div class="producto">
-            <img src="Imgcafepag/15.jpg" loading="lazy" alt="Sándwich Artesanal">
-            <h3>Sándwich Artesanal</h3>
-            <p>Ideal para la oficina</p>
-        </div>
-    </div>
-
-    
-    <div class="col-12 col-sm-6 col-lg-4">
-        <div class="producto">
-            <img src="Imgcafepag/16.png" loading="lazy" alt="Espresso Tradicional">
-            <h3>Combo Café + Pan</h3>
-            <p>Rápido y delicioso</p>
-        </div>
-    </div>
-
-</section>
+    <section class="row g-4">
+     
+        <div class="col-12 col-sm-6 col-lg-4"><div class="producto"><img src="Imgcafepag/1.jpg" alt="Espresso"><h3>Espresso Tradicional</h3><p>Intenso y aromático</p></div></div>
+        <div class="col-12 col-sm-6 col-lg-4"><div class="producto"><img src="Imgcafepag/2.jpg" alt="Americano"><h3>Americano</h3><p>Clásico y suave</p></div></div>
+        <div class="col-12 col-sm-6 col-lg-4"><div class="producto"><img src="Imgcafepag/4.png" alt="Capuccino"><h3>Capuccino</h3><p>Espuma perfecta</p></div></div>
+        <div class="col-12 col-sm-6 col-lg-4"><div class="producto"><img src="Imgcafepag/3.jpg" alt="Latte"><h3>Latte</h3><p>Cremoso y balanceado</p></div></div>
+        <div class="col-12 col-sm-6 col-lg-4"><div class="producto"><img src="Imgcafepag/5.jpg" alt="Mocaccino"><h3>Mocaccino</h3><p>Café con chocolate</p></div></div>
+        <div class="col-12 col-sm-6 col-lg-4"><div class="producto"><img src="Imgcafepag/6.jpg" alt="Café Negro"><h3>Café Negro</h3><p>100% hondureño</p></div></div>
+        <div class="col-12 col-sm-6 col-lg-4"><div class="producto"><img src="Imgcafepag/8.jpg" alt="Café Frío"><h3>Café Frío</h3><p>Refrescante</p></div></div>
+        <div class="col-12 col-sm-6 col-lg-4"><div class="producto"><img src="Imgcafepag/9.jpeg" alt="Chocolate"><h3>Chocolate Caliente</h3><p>Reconfortante</p></div></div>
+        <div class="col-12 col-sm-6 col-lg-4"><div class="producto"><img src="Imgcafepag/10.jpg" alt="Té"><h3>Té Natural</h3><p>Hierbas seleccionadas</p></div></div>
+        <div class="col-12 col-sm-6 col-lg-4"><div class="producto"><img src="Imgcafepag/11.jpg" alt="Pan de Banano"><h3>Pan de Banano</h3><p>Artesanal</p></div></div>
+        <div class="col-12 col-sm-6 col-lg-4"><div class="producto"><img src="Imgcafepag/12.jpg" alt="Rosquilla"><h3>Rosquilla Casera</h3><p>Tradición</p></div></div>
+        <div class="col-12 col-sm-6 col-lg-4"><div class="producto"><img src="Imgcafepag/13.jpg" alt="Empanada"><h3>Empanada Dulce</h3><p>Horneada diaria</p></div></div>
+        <div class="col-12 col-sm-6 col-lg-4"><div class="producto"><img src="Imgcafepag/14.jpg" alt="Pastel"><h3>Pastel Tres Leches</h3><p>Favorito</p></div></div>
+        <div class="col-12 col-sm-6 col-lg-4"><div class="producto"><img src="Imgcafepag/15.jpg" alt="Sandwich"><h3>Sándwich Artesanal</h3><p>Ideal oficina</p></div></div>
+        <div class="col-12 col-sm-6 col-lg-4"><div class="producto"><img src="Imgcafepag/16.png" alt="Combo"><h3>Combo Café + Pan</h3><p>Rápido y delicioso</p></div></div>
+    </section>
 </main>
 
-<footer class="footer text-center">
-    © 2026 Caféria Theo Todos los derechos reservados Tegucigalpa, Honduras
-      
+
+<section id="contacto" class="container my-5 text-center">
+    <h2>Contáctenos</h2>
+    <p>
+               Centro de Tegucigalpa<br>
+                 +504 9999-9999<br>
+            Lunes a Viernes 7:00 AM 6:00 PM
+    </p>
+</section>
+
+
+<footer class="footer py-3">
+    © 2026 Cafetería Theo.   Tegucigalpa, Honduras
 </footer>
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 
-<script src="js/main.js"></script>
+<script>
+    const cafeCarousel = document.querySelector('#cafeCarousel');
+    if (cafeCarousel) {
+        new bootstrap.Carousel(cafeCarousel, {
+            interval: 2000,
+            ride: 'carousel',
+            pause: 'hover',
+            touch: true
+        });
+    }
+</script>
 
 </body>
 </html>
